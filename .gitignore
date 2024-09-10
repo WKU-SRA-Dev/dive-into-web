@@ -1,7 +1,20 @@
+# node_modules
 /node_modules
 
+# log
+*.log
+
+# For Mac
 .DS_Store
+Thumbs.db
 
+# env
+.env
+
+# build
 /dist
+/build
 
-.idea/
+# tmp
+*.tmp
+*.swp
