@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>The dark age | dive into web</title>
+    <noscript> Hey, you need to enable js on this device</noscript>
+</head>
+<body> 
+    <!--- this is for redirecting the user to the correct language page -->
+    <script>
+        const userLang = navigator.language;// get the user's language
+        const savedLang = localStorage.getItem('lang');// get the saved language
+        if (savedLang) {
+            savedLang.includes('zh') ? window.location.href = '/cn' : window.location.href = '/en';// redirect the user to the correct language page
+        } else {
+            localStorage.setItem('lang', userLang);// if user did not save the preferred language save the user's language
+            userLang.includes('zh') ? window.location.href = '/cn' : window.location.href = '/en';//use the user's own languagen setting to redirect the user to the correct language page
+        }
+    </script>
+
+</body>
+</html>

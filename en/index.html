@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>The dark age | dive into web</title>
+</head>
+<body>
+
+    <div>
+        <button onclick="toggleLanguage()">中文</button>
+    </div>
+
+    <a href="/cn">cn</a>
+    
+    <script>
+        function toggleLanguage() {
+            localStorage.setItem('lang', 'zh-CN');
+            window.location.href ="/cn"
+        }
+    </script>
+
+</body>
+</html>
