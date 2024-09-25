@@ -1,0 +1,19 @@
+{
+    "name": "Development Container",
+    "dockerFile": "Dockerfile",
+    "context": "..",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+    "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+    ]
+        }
+    },
+    "postCreateCommand": "yarn install",
+    "forwardPorts": [3000],
+    "remoteUser": "node"
+}
