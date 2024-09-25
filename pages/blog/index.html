@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.6.1/github-markdown-light.css" integrity="sha512-tVO0ZLV54CEoiM+i1hvfZGcopGR3rxyyC3L2/P/6NRTVXlrp4OKyTFunluVG1BRNasDLnm6ZRPDKBGM0CkS99Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script src="/scripts/query.js"></script>
+   <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 45px;
+        }
+    
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+    <title>About | dive into web</title>
+</head>
+<body class="container">
+    <header class="header">
+        <div class="logo"> 
+            <img src="/img/logo.png" alt="dive into web" >
+            <h1>dive into web</h1>
+        </div>
+        <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/attribution">Attribution</a></li>
+        </ul> 
+    </header>
+        <article id="markdown-content" class="markdown-body"></article>
+        <script>
+            marked.setOptions({
+                highlight: function(code, lang) {
+                    const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+                    return hljs.highlight(code, { language }).value;
+                }
+            });
+    
+            fetch('/articles/input.md')
+                .then(response => response.text())
+                .then(text => {
+                    document.getElementById('markdown-content').innerHTML = marked.marked(text);
+                    document.querySelectorAll('pre code').forEach((block) => {
+                        hljs.highlightElement(block);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        </script> 
+</body>
+</html>
