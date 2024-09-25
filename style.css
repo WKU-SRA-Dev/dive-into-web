@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+
+}
+
+button{
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem; /* it is a shorthand verticle then horizental */
+}
+
+button:hover{
+    background-color: #f4f4f4;
+    color: #333;
+}
