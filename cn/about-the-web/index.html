@@ -1,30 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="初探网络教程，学习如何进行网页开发，涵盖万维网工作原理、配置开发环境等实用知识。">
+    <meta name="keywords" content="网页开发, HTML, CSS, JavaScript, 万维网, Web 教程, 前端, 静态服务器, 动态服务器">
     <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/assets/favicon.ico" type="/image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>    
     <title>关于网页开发 | 初探网络</title>
 </head>
 <body>
     <div class="container">
         <main>
             <p class="muted">
-                👋，我们的教程改编于 <a href="https://developer.mozilla.org/en-US/docs/Learn">click here</a>, go to MDN and learn more!
+                👋，我们的教程改编于 <a href="https://developer.mozilla.org/en-US/docs/Learn">MDN 文档</a>。访问,了解更多!
             </p>
             
-            <section>
+            <section id="intro">
                 <h1 class="heading">关于网页开发</h1>
+                <ol>
+                    <li>
+                        <a href="#intro">关于网页开发</a>
+                    </li>
+                    <li>
+                        <a href="#configure-your-pc">配置你的电脑</a>
+                    </li>
+                    <li>
+                        <a href="#how-web-works">万维网如何工作</a>
+                    </li>
+                </ol>
                 <p>
                     网页开发是指创建和维护网站的过程。这包括设计网站的用户界面，编写网站的前端代码，以及开发后端代码以使网站工作。
                 </p>
                 <p>
                     网页开发是一个广泛的领域，涵盖了许多不同的技术和技能。这包括HTML，CSS和JavaScript等前端技术，以及Node.js，Python和Ruby等后端技术。
                 </p>
-                <p>
-                    网页开发是一个快速发展的领域，每天都有新的技术和工具出现。这使得网页开发成为一个令人兴奋和具有挑战性的领域。
-                </p>
+    
             </section>
+
+            <section id="configure-your-pc">
+                <h1 class="heading">配置你的电脑</h1>
+
+                <ol>
+                    <li>
+                        <a href="#intro">关于网页开发</a>
+                    </li>
+                    <li>
+                        <a href="#configure-your-pc">配置你的电脑</a>
+                    </li>
+                    <li>
+                        <a href="#how-web-works">万维网如何工作</a>
+                    </li>
+                </ol>
+
+                <p>
+                    首先，安装<a href="https://code.visualstudio.com/" target="_blank">vscode</a>,安装<a href="https://www.google.cn/intl/zh-CN/chrome/" target="_blank">chrome</a>或者<a href="https://www.mozilla.org/zh-CN/firefox/" target="_blank">firefox</a>浏览器。
+                </p>
+
+                <p>
+                    确保 live server 插件安装完成
+                </p>
+
+                <div class="video-player-container">
+                    <iframe src="https://www.youtube.com/embed/mL1IcxIUd5Y?si=hiab-6qsysoG35Rj&vq=hd1080" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <span class="muted"> 因为哔哩哔哩的视频限制360p,为了你的观看体验，我们将尽量使用 YouTube 的中文资源，请确保网络环境畅通。</span>
+
+            </section>
+
+            <section id="how-web-works">
+                <h1 class="heading">万维网如何工作</h1>
+                <ol>
+                  <li>
+                    <a href="#intro">关于网页开发</a>
+                  </li>
+                  <li>
+                    <a href="#configure-your-pc">配置你的电脑</a>
+                  </li>
+                  <li>
+                    <a href="#how-web-works">万维网如何工作</a>
+                  </li>
+                </ol>
+                <p>
+                  开始前，请阅读
+                  <a href="https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/Web_mechanics" target="_blank">web 机制下的所有文章，试着回答下面的问题</a>。
+                </p>
+
+                <div class="video-player-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/NvA_Zqepyk0?si=hFcxiEvDNLA_JsZO&vq=hd1080" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <span class="muted"> 因为哔哩哔哩的视频限制360p,为了你的观看体验，我们将尽量使用 YouTube 的中文资源，请确保网络环境畅通。</span>
+                </div>
+
+                <p>确保你已有对如下概念的了解：</p>
+                <a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/Web_mechanics/How_does_the_Internet_work#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%BD%91%E7%BB%9C">网络基本模型</a> 
+                <a href="https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/Web_mechanics/Pages_sites_servers_and_search_engines#%E7%BD%91%E9%A1%B5" target="_blank" rel="noopener noreferrer">网页基本构成 - document</a>
+                <a href="https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/Web_mechanics/What_are_hyperlinks" target="_blank" rel="noopener noreferrer">超链接</a>
+                <a href="https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/Web_mechanics/What_is_a_domain_name" target="_blank" rel="noopener noreferrer">域名</a> 
+                <a href="https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL" target="_blank" rel="noopener noreferrer">url</a>
+                <a href="https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/Web_mechanics/What_is_a_web_server"  target="_blank" rel="noopener noreferrer">web 服务器</a>
+                <div class="qa">
+                  <h2 class="q">描述你的浏览器访问bilibili.com发生了什么？</h2>
+                  <p class="a">当你输入 "bilibili.com" 时，浏览器会进行 DNS 查询，找到 Bilibili 服务器的 IP 地址。找到后，浏览器向服务器发送 HTTP 或 HTTPS 请求，服务器返回网页，浏览器渲染显示。</p>
+                </div>
+                <div class="qa">
+                  <h2 class="q">一个网页文档由哪些部分组成？</h2>
+                  <p class="a">网页文档由 DOCTYPE 声明、HTML 元素（包括头部和主体内容）、脚本和样式表组成。</p>
+                </div>
+                <div class="qa">
+                  <h2 class="q">什么是万维网？</h2>
+                  <p class="a">万维网是一个信息系统，通过 URL 标识文档和资源，用户可以通过浏览器访问这些资源。</p>
+                </div>
+                <div class="qa">
+                  <h2 class="q">分析 d2w.wkuci.com，TLD（顶级域名）是？SLD（二级域名）是？</h2>
+                  <p class="a">TLD 是 .com，SLD 是 wkusci。</p>
+                </div>
+                <div class="qa">
+                  <h2 class="q">DNS 如何工作？</h2>
+                  <p class="a">DNS 就像是互联网的电话簿，它将域名翻译成 IP 地址，使得浏览器能够访问服务器。</p>
+                </div>
+                <div class="qa">
+                  <h2 class="q">分析
+                    <code>https://d2w.wkusci.com:80/blogs/have-a-nice-day/?invitation=4590098&recommand=232423#have-fun</code>   
+                  </h2>
+                  <p class="a">https 是传输数据的协议或方案 schema。</p>
+                  <p class="a">d2w.wkusci.com:80 是 权威，authority。 d2w.wkusci.com 是域名，80是端口。80为 http 默认端口，443为 https 默认端口，如果你的后端服务器通过6666端口提供服务
+                  那么 <code> https://d2w.wkusci.com:6666/user/?id=12321 </code>                   
+                  <span>
+                  就是一个完整的 URL,你访问的是 d2w.wkusci.com 的 6666 端口提供的服务，参数为 id=12321
+                </span>
+                </p>
+                  <p class="a">方案和权威之间的分隔符是 <code>://</code>。冒号将方案与 URL 的下一部分分隔开，而 <code>//</code> 表示 URL 的下一部分是权威。
+                    不使用权威的 URL 示例之一是邮件客户端<code>mailto:foobar</code>。它包含方案，而不使用权威的部分。因此，冒号后没有跟着两个斜杠，并且只充当方案和邮件地址之间的分隔符。</p>
+                  <p class="a"><code>/blogs/have-a-nice-day</code> 是我们访问的资源路径，由服务器的 API 端口负责接收和处理请求。</p> 
+                  <p class="a">? 后面是提供给 Web 服务器的额外参数。这些参数是用 & 符号分隔的键/值对列表。在返回资源之前，Web 服务器可以使用这些参数来执行额外的操作。每个 Web 服务器都有自己关于参数的规则，唯一可靠的方式来知道特定 Web 服务器是否处理参数是通过询问 Web 服务器所有者。</p>               
+                  <p class="a"><code>#have-fun</code> 是一个片段标识符，它指示浏览器在渲染页面时滚动到具有相应 ID 的元素。片段标识符不会发送到服务器，因此服务器不会看到它。它只在客户端上处理。可以用作页面内导航</p>
+                </div>
+                      
+                <div class="qa">
+                    <p class="q">
+                        相对url和绝对url
+                    </p>
+                    <p class="a">
+                        绝对URL包括协议和主机名，而相对URL不包括协议和主机名。相对URL相对于基本URL进行解析。基本URL是包含相对URL的文档的URL。相对URL可以是相对于基本URL的路径，或者是相对于基本URL的路径和查询字符串的组合。具体请查看<a target="_blank" rel="noopener noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL#%E7%BB%9D%E5%AF%B9_url_%E5%92%8C%E7%9B%B8%E5%AF%B9_url">mdn文档</a>
+                    </p>
+                </div>
+                <div class="qa">
+                    <p class="q">什么是静态服务器，什么叫动态服务器</p>
+                    <p class="a">
+                        静态服务器是指仅提供静态资源的服务器，如 HTML、CSS、JavaScript、图片、视频等。动态服务器是指能够根据请求的不同返回不同内容的服务器，我们称它为“动态”是因为这个应用服务器会在通过 HTTP 服务器把托管文件传送到你的浏览器之前会对这些托管文件如<code>html</code>进行更新。
+                    </p>
+                </div>
+            
+              </section>
         </main>
     </div>
 </body>

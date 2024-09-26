@@ -6,9 +6,8 @@
     <link rel="stylesheet" href="style.css">
     <title>The dark age | dive into web</title>
     <noscript> Hey, you need to enable js on this device</noscript>
-</head>
-<body> 
-    <!--- this is for redirecting the user to the correct language page -->
+    <link rel="icon" href="/assets/favicon.ico" type="/image/x-icon">     
+       <!--- this is for redirecting the user to the correct language page -->
     <script>
         const userLang = navigator.language;// get the user's language
         const savedLang = localStorage.getItem('lang');// get the saved language
@@ -19,6 +18,7 @@
             userLang.includes('zh') ? window.location.href = '/cn' : window.location.href = '/en';//use the user's own languagen setting to redirect the user to the correct language page
         }
     </script>
-
+</head>
+<body> 
 </body>
 </html>
