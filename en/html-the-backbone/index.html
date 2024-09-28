@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="html-the-backbone.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <link rel="icon" href="/assets/favicon.ico" type="/image/x-icon">
+    <meta name="keywords" content="dive into, dive into web, web development, HTML, CSS, JavaScript, programming">
+    <meta name="description"
+        content="Learn web development with tutorials on HTML, CSS, JavaScript, and programming tips for total beginners.">
+    <title>HTML The Backbone | Dive Into Web</title>
+</head>
+
+<body>
+    <div class="container">
+        <main>
+            <section>
+                <p class="heading">🎨 This Is Your Canvas, and You Are The Artist 🖌️</p>
+                <div class="video-player-container">
+                    <iframe src="https://www.youtube.com/embed/ErynNtz2PEg?si=XvTLgla7qjHg7gzs"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="paragraph">
+                    What is HTML? Not MAGIC 🧙‍♂️, just a text file 📄, but it is the entry point for all web apps. The
+                    first cargo 🚚 the web delivers to you is the HTML.
+                    Why is it so important? Because it is the structure 🏗️ or backbone of your web app.
+                    HTML is the canvas 🎨, and you are the artist 👨‍🎨 with the color of CSS 🌈 and the brush of
+                    JavaScript 🖌️.
+                    Pay attention to the following list; it is what we will learn in this course:
+                </p>
+                <ol>
+                    <li>✨ Elements</li>
+                    <li>⚙️ Attributes</li>
+                    <li>🏷️ Identifiers</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Elements</h2>
+                <div class="video-player-container">
+                    <iframe src="https://www.youtube.com/embed/87CLw4t2lBs?si=XvTLgla7qjHg7gzs"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="paragraph">
+                    So, what is element 🤔 <br />
+                    Nothing but some building blocks 🧱 of your webpage. Each element serves a purpose, whether it’s a
+                    heading <code>&lt;h1&gt &lt;/h1&gt</code>, paragraph<code>&lt;p&gt &lt;/p&gt</code>,
+                    image<code>&lt;img&gt &lt;/img&gt</code>, or a link<code>&lt;a&gt &lt;/a&gt</code> 🔗
+
+                </p>
+                <code class="language-html">
+                    &lt;p&gt;This is a paragraph element.&lt;/p&gt;
+                </code>
+                <p class="paragraph">
+                    As you can see, elements are like containers 🛢️, and each one is defined by its opening and closing
+                    tags. They help structure your webpage in a meaningful way.<br />
+                    Why do we need these elements? You have to know the rendering engine is a muggle (know nothing)
+                    🧙‍♂️. It won't know what you want unless you clearly define it. For example, you might want to
+                    render a heading, then a paragraph, and finally insert your cute dog's image.
+                    <code class="block">
+                        My Dog <br>
+                        This is my cute dog <br>
+                        "An image of my dog" ❌ — the rendering engine does not know what you mean, it just treats everything as plain text and renders it as such.<br>
+                        -----------------<br>
+                        heading: "My Dog"<br>
+                        paragraph: "This is my cute dog"<br>
+                        image: "dog.jpg" 🥹 — Thank you! Now I understand what you're asking for. But can you make it more structured so I can nest more elements?<br>
+                        -----------------<br>
+                        &lt;h1&gt;My Dog&lt;/h1&gt;<br>
+                        &lt;p&gt;This is my cute dog&lt;/p&gt;<br>
+                        &lt;img src="dog.jpg" alt="My cute dog"&gt; 🌍 — Yes, this looks much better! The tags clearly define what each element is, and now I can easily nest other elements within the content.
+                    </code>
+                <h3>Types of Elements</h3>
+                <div class="video-player-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/F2sJR1ViJsQ?si=6rnR7u_2Zm0gCiQg"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p class="paragraph">
+                    HTML elements come in many forms, and each serves a specific role in structuring your webpage. Let’s
+                    go over some common categories:
+                </p>
+
+                <h4>1. Block-level Elements</h4>
+                <p class="paragraph">
+                    Block-level elements 🧱 take up the full width available, and they always start on a new line. They
+                    are used to structure major parts of the webpage. Common block-level elements include:
+                </p>
+                <ul>
+                    <li><code>&lt;div&gt;</code> — a generic container element</li>
+                    <li><code>&lt;h1&gt; to &lt;h6&gt;</code> — headings for different levels</li>
+                    <li><code>&lt;p&gt;</code> — for paragraphs of text</li>
+                    <li><code>&lt;section&gt;</code> — a section of related content</li>
+                    <li><code>&lt;article&gt;</code> — an independent piece of content, like a blog post</li>
+                    <li><code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;nav&gt;</code> — structural
+                        elements for organizing content</li>
+                </ul>
+
+                <h4>2. Inline Elements</h4>
+                <p class="paragraph">
+                    Inline elements 🧩 only take up as much space as their content needs and don’t force a line break.
+                    They are often used inside block-level elements. Examples include:
+                </p>
+                <ul>
+                    <li><code>&lt;span&gt;</code> — a generic inline container</li>
+                    <li><code>&lt;a&gt;</code> — for hyperlinks</li>
+                    <li><code>&lt;em&gt;</code> — to emphasize text (typically displayed as italics)</li>
+                    <li><code>&lt;strong&gt;</code> — to strongly emphasize text (typically displayed as bold)</li>
+                    <li><code>&lt;img&gt;</code> — for images</li>
+                </ul>
+
+                <h4>3. Self-closing Elements</h4>
+                <p class="paragraph">
+                    Some elements don't need a closing tag and are called self-closing elements 🌟. They represent
+                    something that doesn't wrap any content, like an image or a line break. Here are a few examples:
+                </p>
+                <ul>
+                    <li><code>&lt;img&gt;</code> — for embedding images</li>
+                    <li><code>&lt;br&gt;</code> — for line breaks</li>
+                    <li><code>&lt;hr&gt;</code> — for horizontal rules (dividers)</li>
+                    <li><code>&lt;meta&gt;</code> — for metadata (information about the HTML document)</li>
+                    <li><code>&lt;input&gt;</code> — for form inputs</li>
+                </ul>
+
+                <h3>Nested Elements</h3>
+                <p class="paragraph">
+                    HTML elements can be nested inside one another, creating a hierarchy tree 🌳. For example, you can
+                    put a <code>&lt;p&gt;</code> element inside a <code>&lt;div&gt;</code> or place inline elements,
+                    like <code>&lt;em&gt;</code> and <code>&lt;a&gt;</code>, inside a paragraph. Here’s a quick example:
+                </p>
+                <pre>
+    <code class="language-html">
+        &lt;div&gt;<br>  
+        &nbsp;&nbsp;&lt;h1&gt;Welcome to My Website&lt;/h1&gt;<br>
+        &nbsp;&nbsp;&lt;p&gt;This is a paragraph with a &lt;strong&gt;bold text&lt;/strong&gt; and a 
+        &lt;a href="https://example.com"&gt;link&lt;/a&gt;.&lt;/p&gt;<br>
+        &lt;/div&gt;
+    </code>
+    </pre>
+
+                <p class="paragraph">
+                    As you can see, elements can be nested to create complex structures, with block elements acting as
+                    containers for inline elements. This gives you the flexibility to build well-organized, meaningful
+                    content.
+                </p>
+                <h3>Semantics and Accessibility</h3>
+                <div class="video-player-container">
+                    <iframe src="https://www.youtube.com/embed/1lX6TDY3eLw?si=6uBBpMOTnGt1ftTh"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <p class="paragraph">
+                    HTML is more than just building a visually structured page; it’s also about creating semantic
+                    meaning 🧠. Semantic elements describe their content and purpose, making the document more
+                    understandable for both users and search engines.
+                </p>
+                <p class="paragraph">
+                    Examples of semantic elements include:
+                </p>
+                <ul>
+                    <li><code>&lt;header&gt;</code> — defines the header section of a webpage</li>
+                    <li><code>&lt;nav&gt;</code> — defines navigation links</li>
+                    <li><code>&lt;article&gt;</code> — represents an independent piece of content</li>
+                    <li><code>&lt;footer&gt;</code> — defines the footer section</li>
+                    <li><code>&lt;aside&gt;</code> — represents content related to the main content</li>
+                </ul>
+                <p class="paragraph">
+                    Using semantic elements improves accessibility ♿, as screen readers can better interpret the
+                    structure of your page, and it can also help with SEO (Search Engine Optimization) to rank your
+                    pages higher in search results.
+                </p>
+
+
+
+            </section>
+
+            <section>
+                <h2>Attribute</h2>
+                <ul>
+                    <li><strong>Required Attributes</strong>: These attributes are necessary for the element to function
+                        correctly. For example, the <code>src</code> attribute in an <code>&lt;img&gt;</code> tag
+                        specifies the path to the image file.</li>
+                    <li><strong>Optional Attributes</strong>: These attributes provide additional information or
+                        functionality but are not essential. For example, the <code>alt</code> attribute in an
+                        <code>&lt;img&gt;</code> tag provides alternative text for the image.
+                    </li>
+                    <li><strong>Event Attributes</strong>: These attributes define event handlers, which are scripts
+                        that run when a specific event occurs. For example, the <code>onclick</code> attribute in a
+                        button element specifies a script to run when the button is clicked.</li>
+                </ul>
+                <div class="video-player-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/1zaXEHcF1Pw?si=ngPNxM5H2_muyVZv"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p class="paragraph">
+                    Now, let's talk about attributes 🏷️. <br />Attributes provide additional information about
+                    elements.
+                    They are placed inside the opening tag, adding details or instructions to how the element behaves.
+                    For example, the <code>href</code> attribute in an anchor tag(&lt;a&gt) defines the destination of a
+                    link:
+                </p>
+                <code class="language-html">
+                        &lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;
+                    </code>
+                <p class="paragraph">
+                    In this case, the <code>href</code> attribute tells the browser where to go when the link is
+                    clicked.
+                    Attributes are powerful because they customize the behavior of elements. You’ll see them everywhere
+                    — from defining image sources 🖼️ with <code>src</code> to setting CSS styles with
+                    <code>class</code> and <code>id</code>.
+                </p>
+                <p class="paragraph">
+                    Let's look at another example with the <code>img</code> element:
+                </p>
+                <code class="language-html">
+                    &lt;img src="image.jpg" alt="A beautiful scenery" width="500"&gt;
+                    </code>
+                <p class="paragraph">
+                    Here, the <code>src</code> attribute defines the image source, <code>alt</code> provides alternative
+                    text for accessibility, and <code>width</code> sets the image size.
+                    Attributes are your way of fine-tuning 🔧 your webpage, ensuring that everything looks and behaves
+                    exactly as you intend.
+                </p>
+                <p class="paragraph">
+                    Remember, attributes are key-value pairs, where the attribute name comes first, followed by an equal
+                    sign and the value in quotes.
+                    They are essential for adding functionality and interactivity to your web pages. 🌐
+                </p>
+            </section>
+            <section>
+                <h2>Class, ID, selectors, identifiers</h2>
+                <p>Now let's dive into identifiers 🏷️. Identifiers allow you to target specific HTML elements for
+                    styling or scripting purposes. The two most common selectors are <code>id</code> and
+                    <code>class</code>.</p>
+
+                <div class="video-player-container">
+                    <iframe src="https://www.youtube.com/embed/qc9jgsClEJs?si=kgLvkQB9Wr2TgU3G"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+
+                <p class="paragraph">
+                    In HTML, selectors like <code>id</code> and <code>class</code> serve as identifiers for specific
+                    elements, making it easier to target them with CSS for styling 🎨 or with JavaScript for scripting
+                    🖥️.
+                    Think of them as labels that you attach to elements, allowing you to apply distinct styles or
+                    actions. <br />
+                    Additionally, the tag type itself can be used as a selector.
+                </p>
+
+                <code class="language-html">
+            &lt;div id="main-container"&gt;This is the main container&lt;/div&gt;
+        </code>
+
+                <p class="paragraph">
+                    The <code>id</code> attribute provides a unique identifier 🔑 for an element. It should be used only
+                    once per page, as it uniquely identifies that element. Meanwhile, the <code>class</code> attribute
+                    can be reused across multiple elements, acting like a label that groups similar elements together.
+                </p>
+
+                <pre><code class="language-html">&lt;div class="card"&gt;This is a card element&lt;/div&gt;
+&lt;div id="unique-card" class="card"&gt;This is a unique card element&lt;/div&gt;</code></pre>
+
+                <p class="paragraph">
+                    By using <code>id</code> and <code>class</code> selectors, you can easily apply specific styles or
+                    control groups of elements.
+                    For example, you can style the .card class globally, while using the #unique-card ID to give one
+                    specific element a unique look.
+                </p>
+
+                <pre><code class="language-css">.card { 
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 5px;                    
+        }
+    
+    #unique-card {
+        background-color: #ffcccc;
+    }</code></pre>
+
+                <p class="paragraph">
+                    In this example, all elements with the class <code>card</code> will have a light gray background,
+                    but the element with the <code>id="unique-card"</code> will have a pinkish background. This shows
+                    how <code>class</code> and <code>id</code> allow for both broad and specific styling on a webpage.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>QA</h3>
+                    <div class="qa">
+                        <p class="q">
+                            What is the difference between block-level and inline elements?
+                        </p>
+                        <p class="a">
+                            Block-level elements take up the full width available and start on a new line, while inline
+                            elements only take up as much space as their content needs and don’t force a line break.
+                        </p>
+                    </div>
+                    <div class="qa">
+                        <p class="q">
+                            Why are semantic elements important in HTML?
+                        </p>
+                        <p class="a">
+                            Semantic elements describe the content and purpose of the webpage, making it more
+                            understandable for users and search engines. They improve accessibility and SEO.
+                        </p>
+                    </div>
+                    <div class="qa">
+                        <p class="q">
+                            How do attributes enhance elements in HTML?
+                        </p>
+                        <p class="a">
+                            Attributes provide additional information about elements. They are key-value pairs that add
+                            functionality to web pages.
+                        </p>
+                    </div>
+                    <div class="qa">
+                        <p class="q">
+                            What is the purpose of identifiers like id and class in HTML?
+                        </p>
+                        <p class="a">
+                            Identifiers like id and class help label elements, making it easier to style them with CSS
+                            or interact with them using JavaScript. They are essential for organizing and controlling
+                            web pages.
+                        </p>
+                    </div>
+            </section>
+
+
+        </main>
+    </div>
+</body>
+
+</html>
