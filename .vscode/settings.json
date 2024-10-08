@@ -1,0 +1,15 @@
+{
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.port": 7500,
+    "liveServer.settings.root": "/",
+    "liveServer.settings.ignoreFiles": [
+        "**/node_modules/**",
+        "**/.vscode/**",
+        "**/dist/**" ,
+        "**/server/**",
+        "**/demo/**",
+        "**/client/**"
+        
+    ],
+    "liveServer.settings.wait": 1000 
+}
