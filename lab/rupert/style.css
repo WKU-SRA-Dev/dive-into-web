@@ -367,6 +367,11 @@ footer p{
     header {
         flex-direction: column;
     }
+    
+    main {
+        display: flex;
+        flex-direction: column;
+    }
 
     .social-kit {
         width: 100%;
