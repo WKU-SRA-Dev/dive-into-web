@@ -98,20 +98,54 @@
                 <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_web_server"  target="_blank" rel="noopener noreferrer">Web server</a>
 
                 <div class="qa">
-                  <h2 class="q">Describe what happens when you visit bilibili.com?</h2>
-                  <p class="a">When you enter "bilibili.com", your browser performs a DNS lookup to find the IP address of Bilibili's server. Once the address is found, the browser sends an HTTP or HTTPS request to the server, and the server returns the webpage, which is then rendered by the browser.</p>
+                  <h2 class="q">Describe what happens when you visit youtube.com?</h2>
+                  <p class="a">When you enter "youtube.com" in your browser, the browser first performs a DNS lookup, similar to finding a phone contact in your address book
+                    <code class="block" block> youtube.com ---&gt; +1 561-555-7689(it is fake, DO NOT CALL) </code>
+                    to retrieve the IP address associated with the domain. Once the IP address is found, the browser sends an HTTP or HTTPS request to the server. The server then responds by sending the webpage, which the browser renders for you to view.
+                  </p>
                 </div>
                 <div class="qa">
                   <h2 class="q">What are the components of a web page document?</h2>
-                  <p class="a">A web page document consists of a DOCTYPE declaration, HTML elements (including the head and body), scripts, and stylesheets.</p>
-                </div>
+                  <ul class="a">
+                    <li><strong>DOCTYPE Declaration</strong>: The document starts with a DOCTYPE declaration (e.g., <code>&lt;!DOCTYPE html&gt;</code>) that tells the browser what version of HTML is being used. This helps the browser render the page properly.</li>
+                    <li><strong>HTML Element</strong>: The <code>&lt;html&gt;</code> element is the root of the document, wrapping everything inside. It tells the browser that this is an HTML document and usually includes the <code>lang</code> attribute to specify the language of the page.</li>
+                    <li><strong>Head Section</strong>: The <code>&lt;head&gt;</code> element contains meta information about the document, such as the title (<code>&lt;title&gt;</code>), character set (<code>&lt;meta charset="UTF-8"&gt;</code>), and links to external resources like stylesheets and scripts. It’s not directly visible on the page, but crucial for proper functionality.</li>
+                    <li><strong>Body Section</strong>: The <code>&lt;body&gt;</code> element holds all the visible content of the webpage, such as text, images, links, forms, etc. This is the main part of the document that users interact with.</li>
+                    <li><strong>Scripts</strong>: JavaScript files, either inline or external, are loaded into the document using the <code>&lt;script&gt;</code> tag. They provide interactivity and dynamic functionality to the page.</li>
+                    <li><strong>Stylesheets</strong>: CSS can be linked externally or included inline within the <code>&lt;style&gt;</code> tag. These stylesheets control the appearance and layout of the page elements, making the page visually appealing and user-friendly.</li>
+                </ul>
+               </div>
                 <div class="qa">
                   <h2 class="q">What is the World Wide Web?</h2>
-                  <p class="a">The World Wide Web is an information system where documents and resources are identified by URLs and can be accessed by users through browsers.</p>
+                  <p class="a">The World Wide Web (WWW) is a vast information space that allows users to access and navigate interconnected documents and resources over the Internet. It utilizes the HTTP (Hypertext Transfer Protocol) and consists of a collection of web pages, images, videos, and other multimedia content that are linked together through hyperlinks. The web enables users to retrieve, share, and interact with information using web browsers and provides a platform for countless applications and services.
+                  </p>
                 </div>
                 <div class="qa">
                   <h2 class="q">Analyze d2w.wkusci.com, what is the TLD (Top-Level Domain) and SLD (Second-Level Domain)?</h2>
                   <p class="a">The TLD is .com, and the SLD is wkusci.</p>
+                </div>
+                <div class="qa">
+                  <h2 class="q">
+                  Differences bewteen URI and URL?
+                  </h2>
+                  <ul class="a">
+                    <li>
+                        <strong>URI (Uniform Resource Identifier)</strong>:
+                        A URI is a generic string of characters that identifies a resource either by location, name, or both. It provides a way to refer to a resource, but it doesn't necessarily indicate how to access it. For example, a URI can represent a resource using its name, such as <code>urn:isbn:0451450523</code> (which identifies a book using its ISBN).
+                        When your reference some paper, you got to use URI, like <code>https://doi.org/10.1145/2783446.2783605</code>, it is unique, that is why urI (identifier)
+                      </li>
+                    <li>
+                        <strong>URL (Uniform Resource Locator)</strong>:
+                        A URL is a specific type of URI that provides the means to access a resource over the Internet. It includes the protocol (such as <code>http</code> or <code>https</code>), the domain name (like <code>wkusci.com</code>), it is used to specify how to access a particular resource.
+                    </li>
+                    <li>
+                        <strong>Differences</strong>:
+                        <ul>
+                            <li><strong>Scope</strong>: All URLs are URIs, but not all URIs are URLs. URLs specify a way to retrieve a resource, while URIs can simply identify it.</li>
+                            <li><strong>Structure</strong>: URLs provide a complete address that includes the protocol and resource location, while URIs may not provide such information.</li>
+                        </ul>
+                    </li>
+                  </ul>
                 </div>
                 <div class="qa">
                   <h2 class="q">How does DNS work?</h2>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--please think about what does meta and link do, and how to make your webpage alive-->
+    <meta name="description" content="">
+    <link rel="stylesheet" href="style.css">
+    <!--- try to make href point to a .ico image and see what will happen-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!---delte the below script tags, use the below one to do the same thing-->
+    <script src="index.js"></script>
+    <script>
+
+        /**
+         * UNCOMMENT THE CODE BELOW TO SEE THE MAGIC HAPPEN
+         */ 
+
+        // const hoursNow = new Date().getHours();
+        // alert(hoursNow < 18 ? (hoursNow < 12 ? 'Good morning' : 'Good afternoon') : 'Good evening');
+   </script>
+  
+    <style>
+
+        header h1{
+            padding: 1rem;
+            text-align: center;
+            background-color: yellow;
+            color: red;
+        }
+
+        header a{
+            text-decoration: none;
+        }
+    </style>
+    <title>HTML FINAL LAB</title>
+</head>
+<body>
+
+    <header>
+        <a href="/"><h1>Put your logo or your web app name here, it should direct users to the home page</h1></a>
+        <nav>
+            <ul>
+                <li><a href="#intro-to-header">Intro to header</a></li>
+                <li><a href="#list">Lists</a></li>
+                <li><a href="#table">Table</a></li>
+                <li><a href="#image">Images</a></li>
+                <li><a href="#audio-video">Audio & Video</a></li>
+                <li><a href="#form">Forms</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <aside>
+        <h3>Tool box, or another navigation</h3>
+        <p>To be honest, the navigation bar in the header below is not a good example; it link to the page's
+            resources but the navigation should be structured around logical categories or
+            sections that reflect the overall site hierarchy. You can put them here, that will be a wisdom choice
+        </p>
+        <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+        </ul>
+    </aside>
+   
+    <main>
+        <section id="intro-to-header">
+            <h2>Introduction to the Header</h2>
+                <p>You have used anchor <code>&lt;a&gt;</code>, navigation <code>&lt;nav&gt;</code>, and unordered list <code>&lt;ul&gt;</code> tags.</p>
+                <p>Some are semantic elements, while others are non-semantic elements. Semantic elements clearly describe their meaning in a human- and machine-readable way. For instance, the <code>&lt;nav&gt;</code> element indicates that the enclosed links are for navigation, helping both search engines and developers understand the structure of the document better.</p>
+                <p>On the other hand, non-semantic elements, like <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code>, do not convey any meaning about their content. They serve primarily as generic containers for grouping content and applying styles, without providing any specific context to their purpose.</p>
+                <p>Using semantic elements improves accessibility and enhances search engine optimization (SEO) by providing better context about the content's role and structure within the webpage.</p>
+        </section>
+
+        <section id="list">
+            <h2>Lists</h2>
+            <h3>Unordered List</h3>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+
+            <p>we use unordered list in nav bar frequently, or we can say we use it when we want to list some thing</p>
+        
+            <h3>Ordered List</h3>
+            <ol>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+            </ol>
+        </section>
+        
+        <section id="table">
+            <h2>Table</h2>
+            <table border>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>25</td>
+                        <td>New York</td>
+                    </tr>
+                    <tr>
+                        <td>Jane</td>
+                        <td>30</td>
+                        <td>Los Angeles</td>
+                    </tr>
+                    <tr>
+                        <td>Mike</td>
+                        <td>28</td>
+                        <td>Chicago</td>
+                    </tr>
+                </tbody>
+            </table>
+            <img src="table-demo.png" alt="table" width="100%">
+            <p>Some universities, such as UC Berkeley, use a table format for their course calendars. A good example of this is the CS 61A course calendar. However, we do not use this element frequently, so you do not have to konw how to use it
+                especially when you are using front-end framework (because we can always find a component using these framework) or you do not want to dive deep into front-end related stuff.
+            </p>
+        </section>
+        
+        <section id="image">
+            <h2>Images with 300 by 300 size</h2>
+            <img src="https://via.placeholder.com/300" alt="Sample Image">
+            <p>The image above did not recieve a width and height attribute, so use default image size</p>
+
+            <h2>Images with explicit height and width</h2>
+            <img width="400" height="400" src="https://via.placeholder.com/300" alt="Sample Image">
+            <p>Yeah, we give 400 by 400 width and height. Although it is still the same image we show before, the image got resize</p>
+            <h1>Your turn</h1>
+            <img src="https://via.placeholder.com/300" alt="Sample Image">
+            <p>Try different size and proportion, pay attention to the image quality </p>
+            <p>If you have enough time, please find more information on raster and vector, physic pixels and logic pixels </p>
+            <h2>If the resources is not found, we will show the text  in alt attribute </h2>
+            <img width="400" height="400"  alt="Sample Image" >
+
+        </section>
+        
+        <section id="audio-video">
+            <h2>Audio and Video</h2>
+            <audio id="audio" controls>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <button onclick="document.getElementById('audio').play()">
+                Play Audio
+            </button>
+            <p>
+                button, you can pass a fnction to onclick event, then you can invoke the play function in audio element, and play the audio. How to play the audio not the video or if we have multiple audio,
+                we use id to identify the element we want to manipulate 
+            </p>
+        
+            <h3>Video Example</h3>
+            <video width="320" height="240" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+            <p>Your task: figure out what is iframe, and try to use it</p>
+        </section>
+        
+        <section id="form">
+            <h2>Form</h2>
+            <form style="display:flex;flex-direction:column;" action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+        
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+        
+                <label for="subscribe">
+                    <input type="checkbox" id="subscribe" name="subscribe"> Subscribe
+                </label>
+        
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; background-color: #f8f9fa; color: #343a40; ">
+            <p>© 2024 Rupert. All rights reserved.</p>
+            <p style="color:grey; font-size: 0.5rem;">You need to show your copyrighthere</p>
+            
+            <div style="margin-top: 1rem;">
+                <p>Contact:</p>
+                <p>Email: <a href="mailto:rupert@wkusci.com" style="color: #007bff; text-decoration: none;">rupert@wkusci.com</a></p>
+                <p>Phone: <a href="tel:+1234567890" style="color: #007bff; text-decoration: none;">+1 (235) 657-742 </a></p>
+                <p style="color:grey; font-size: 0.5rem;">DO NOT CALL THIS NUMBER, it is fake</p>
+            </div>
+    
+            <div style="margin-top: 1rem;">
+                <p>
+                    <a href="https://wiki.wkusci.com/blog/programming-tutorial/python/introduction#%E7%89%88%E6%9D%83%E7%94%B3%E6%98%8E" style="color: #007bff; text-decoration: none;">Privacy Policy</a> |
+                    <a href="https://wiki.wkusci.com/blog/programming-tutorial/python/introduction#%E7%89%88%E6%9D%83%E7%94%B3%E6%98%8E" style="color: #007bff; text-decoration: none;">Terms of Service</a> |
+                    <a href="https://www.wkusci.com/contactus" style="color: #007bff; text-decoration: none;">Contact Us</a>
+                </p>
+            </div>
+    
+            <div style="margin-top: 1rem;">
+                <p>Follow us on:</p>
+                <p>
+                    <a href="https://x.com/WKU_SRA" target="_blank" style="color: #007bff; text-decoration: none;">X</a> |
+                    <a href="https://linkedin.com" target="_blank" style="color: #007bff; text-decoration: none;">LinkedIn</a>
+                </p>
+            </div>
+    </footer>
+    
+
+    <script>
+        /** 
+         *  Hi, do you know why this script is at the end of the body tag?
+         *  What will happen if you put it in the head tag?
+         *  Indeed, the google analytics script, cloudflare web analstics script, and other tracking scripts are usually placed at the end of the body tag.
+         *  This is because the browser will block rendering the page until the script is loaded
+         *  If the script is placed at the end of the body tag, the browser will render the page first and then load the script.
+         *  For our case, we want to make sure the DOM is loaded before we start manipulating it.
+         *  Got it? 
+         *  Congratulations! 🥳 You have already learned a lot about web development. You can deploy your own static website now on GitHub Pages and show up to your friends
+         *  SOOOOO COOOOLLLLLL! 🤩
+        */
+        const headerHeight = document.querySelector('header').offsetHeight
+        const sidebar = document.querySelector('aside');
+        let sidebarHovered = false;
+
+        sidebar.addEventListener('mouseover', () => {
+            sidebarHovered = true;
+            sidebar.style.textAlign = 'initial';
+            sidebar.style.opacity = '1';
+            sidebar.style.backgroundColor = 'white';
+            sidebar.style.height = 'initial';
+        });
+
+        sidebar.addEventListener('mouseout', () => {
+            sidebarHovered = false;
+            sidebar.style.backgroundColor = 'initial';
+            if (window.scrollY > headerHeight) {
+                sidebar.style.height = '2rem';
+            }else{
+                sidebar.style.height = 'initial';
+            }
+
+        });
+
+        let scrollhandled = false;
+
+        const handleScroll = throttle(() => { 
+            
+            if(scrollhandled) {
+                scrollhandled = false;
+                return;
+            }
+            const scrollY = window.scrollY;        
+            if (scrollY > headerHeight) {
+                if (scrollY < 2 * headerHeight){
+                    return;
+                }
+                sidebar.style.width = '100%';
+                sidebar.style.textAlign = 'center';
+                sidebar.style.margin = '0';
+                sidebar.style.padding = '0.5rem';
+                sidebar.style.opacity = '0.8';
+                sidebar.style.height = sidebarHovered ?  'initial': '2rem';
+
+                console.log(sidebar.style.height);
+            } else {
+                sidebar.style.height = 'initial';
+                sidebar.style.opacity = 'initial';
+                sidebar.style.margin = 'initial';
+                console.log('scrolling');
+                sidebar.style.width = '45%';
+            }
+
+            scrollhandled = true;
+            // you can also write like this
+            // window.scrollY <= headerHeight && (sidebar.style.position = 'static');
+        }, 500);
+
+        const listener = window.addEventListener('scroll', handleScroll);
+        
+    </script>
+    
+    </body>
+</html>

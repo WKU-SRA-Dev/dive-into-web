@@ -1,0 +1,93 @@
+/* GENERAL STYLE, I just want to say, CLASSIC and works */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    
+/* HEADER */
+
+header nav {
+    background-clip: content-box;
+    border: 2px solid red;
+    padding: 1rem;
+    background-color: blue;
+    background-clip: padding-box;
+}
+
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+header nav ul li a {
+    font-size: 1rem;
+    color: yellowgreen;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+}
+
+header nav ul li a:hover {
+    font-size: 1.2rem;
+    transform: translateX(10px);
+    color: black;
+}
+
+aside {
+    overflow: hidden;
+    margin: 2rem;
+    width: 45%;
+    position: sticky;
+    top: 0; 
+    left: 100%;
+    background: #fff;
+    border-radius:2rem;
+    padding: 20px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+    transition: all 0.5s ease;
+}
+
+
+.sticky-active {
+    width: 25%;
+    background: #f0f0f0; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+aside li {
+    list-style: none;
+    color: #333;
+}
+
+h2 {
+    color: #333;
+}
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+section
+
+section > * {
+    width: 50%;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
+}

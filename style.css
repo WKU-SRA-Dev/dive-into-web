@@ -175,3 +175,11 @@ li{
         width: 80%;
     }
 }
+
+@media  screen and (max-width: 600px) {
+    .container {
+        padding: 1rem;
+        width: 100%;
+    }
+    
+}
