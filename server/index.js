@@ -1,24 +1,27 @@
 const express = require('express');
-const router = require('./api/code-box/index.js');
+const demoRouter = require('./route/code-box/index.js');
+const appRouter = require('./route/local-server/index.js');
 const {codeBoxServe} = require('./sockets/code-box/index.js');
 
 const htmlCodeBoxServer = express();
 const cssCodeBoxServer = express();
 
-htmlCodeBoxServer.use(express.static(__dirname));
-cssCodeBoxServer.use(express.static(__dirname));
-
 codeBoxServe(htmlCodeBoxServer, 8080, 'index.html');
 codeBoxServe(cssCodeBoxServer, 9090, 'style.css');
 
+const demo = express();
 const app = express();
 
-app.use(router);
+demo.use(demoRouter);
+app.use(appRouter);
 
-app.listen(3000, () => {
+demo.listen(3000, () => {
     console.log('lab demo server is running on port 3000 http://localhost:3000');
 });
 
+app.listen(3001, () => {
+    console.log('click me to see the web page http://0.0.0.0:3001');
+});
 
 
 

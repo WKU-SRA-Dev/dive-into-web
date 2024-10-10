@@ -77,7 +77,7 @@ function codeBoxServe(app,port,fileType) {
     });
 
     server.listen(port || 8080, () => {
-        console.log(`${fileType} Server is running on http://localhost:${port || 8080}`);
+        console.log(`${fileType} Server is running on http://0.0.0.0:${port || 8080}`);
     });
 }
 
