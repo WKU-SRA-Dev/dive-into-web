@@ -8,8 +8,7 @@
     
 /* HEADER */
 
-header nav {
-    background-clip: content-box;
+header  nav {
     border: 2px solid red;
     padding: 1rem;
     background-color: blue;
