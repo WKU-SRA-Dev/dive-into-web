@@ -45,10 +45,52 @@ We may not provide video based tutorial cause we believe you can find most good 
    
    2. Clone the repository to your local repository.
    
-   3. `git switch main` form any folder in your local `dive-into-web` repository.
+   4. `git checkout -b my-code-journey` (You can name the branch as you like)
+
+      4. Use `yarn install` to install all the dependencies.
+      
+      5. Use `yarn build` to build the server.
+      
+      6. Use `yarn start` to start the server.
+      
+      7. Open the links shown in your terminal.
+
+   8. Alternatively, run `yarn hello-world` for the first time; it includes all the scripts you need to run the app.
+
+### 4. **Further Instructions**
+
+When new code is pushed to the repository:
+
+1. **Sync Your Local Repository**:
+   - Ensure you're on the branch where you want to incorporate the updates:
+     ```bash
+     git switch main
+     ```
+   - Pull the latest changes from the remote repository:
+     ```bash
+     git pull origin main
+     ```
+     Replace `main` with the appropriate branch if you can resolve the conflicts
+
+2. **Install New Dependencies**:
+   - After pulling the latest changes, you might need to install any new dependencies. Run:
+     ```bash
+     yarn install
+     ```
+
+3. **Rebuild the Project**:
+   - If there are updates that require a rebuild, execute:
+     ```bash
+     yarn build
+     ```
+
+4. **Restart the Server**:
+   - Finally, restart the server to reflect the latest changes:
+     ```bash
+     yarn start
+     ```
+
+By following these steps, you can ensure that your local copy of the project is up-to-date with the latest changes made in the repository.
+
+ 
    
-   4. Use `yarn build` to build the server.
-   
-   5. Use `yarn start` to start the server.
-   
-   6. Open the links shown in your terminal.
