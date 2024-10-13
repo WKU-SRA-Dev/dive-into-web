@@ -1,7 +1,7 @@
 import { io } from 'socket.io-client';
 import { throttle } from './utils/throttle';
 
-export default function createSocketClient(port,filePath,editor,status) {
+export default function createSocketClient(port,filePath,editor,status,reload) {
 
     const socket = io(`http://localhost:${port || 8080}`, {
         query: {
@@ -32,6 +32,7 @@ export default function createSocketClient(port,filePath,editor,status) {
     
                 editor.setPosition(position);
                 editor.setSelection(selection);
+                reload();
             }
         }
     });
@@ -41,6 +42,7 @@ export default function createSocketClient(port,filePath,editor,status) {
         return (currentContent) => {
             if (currentContent !== previousContent) {
                 previousContent = currentContent;
+                reload();
                 return true;
             }
             return false;

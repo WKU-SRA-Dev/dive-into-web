@@ -19,8 +19,16 @@ document.body.appendChild(editorContainer);
 
 const htmlEditorContainer = document.createElement('div');
 const cssEditorContainer = document.createElement('div');
+
 htmlEditorContainer.style.width = '50%';
+htmlEditorContainer.style.boxShadow = '0 0 10px rgba(0,0,0,0.5)';
+
+// BOX SHADOW will influence the behavior of grid layout, if the width is 100%
+htmlEditorContainer.style.overflow = 'hidden';
+cssEditorContainer.style.overflow = 'hidden';
+
 cssEditorContainer.style.width = '50%';
+cssEditorContainer.style.boxShadow = '0 0 10px rgba(0,0,0,0.5)';
 
 const toolbox = document.createElement('div');
 toolbox.style.position = 'fixed';
@@ -30,33 +38,32 @@ toolbox.style.zIndex = '1000';
 toolbox.style.display = 'flex';
 toolbox.style.flexDirection = 'column';
 
-const holdButton = document.createElement('button');
-const scrollButton = document.createElement('button');
+const status = document.createElement('div');
+status.id = 'status';
+status.style.textAlign = 'center';
+status.innerText = 'Connecting...';
 
-scrollButton.innerText = 'To Preview';
-holdButton.innerText = 'LOCK';
-toolbox.appendChild(holdButton);
-toolbox.appendChild(scrollButton);
+const iframe = document.createElement('iframe'); 
 
+iframe.src = `http://localhost:3000${filePath}`;
 
+iframe.style.width = '100%';
+iframe.style.minHeight = '100vh';
 
-scrollButton.onclick = () => {
-    scrollDown();
+function scrollDown() {
+    if(toPreview) {
+        toPreview = false;
+        window.scrollTo(0,editorContainer.scrollHeight);
+        scrollButton.innerText = 'To Editor';
+    }else {
+        toPreview = true;
+        window.scrollTo(0,0);
+        scrollButton.innerText = 'To Preview';
+    }    
 }
-
-let holed = false;
-
-holdButton.onclick = () => {
-    holed = !holed;
-    holdButton.innerText = holed ? 'UNLOCK' : 'LOCK';
-    htmlEditorContainer.style.width = '50%';
-    cssEditorContainer.style.width = '50%';
-}
-
-document.body.appendChild(toolbox);
-
-editorContainer.appendChild(htmlEditorContainer);
-editorContainer.appendChild(cssEditorContainer);
+    
+editorContainer.insertAdjacentElement('afterend', status);
+status.insertAdjacentElement('afterend', iframe);
 
 const htmlEditor = monaco.editor.create(htmlEditorContainer, {
     value: '',
@@ -69,14 +76,16 @@ const htmlEditor = monaco.editor.create(htmlEditorContainer, {
     wordBasedSuggestions: false,  
 });
 
+let hold = false;
+
 htmlEditorContainer.onclick = () => {
-    if (holed) return;
+    if (hold) return;
     htmlEditorContainer.style.width = '90%';
     cssEditorContainer.style.width = '10%';
 }
 
 cssEditorContainer.onclick = () => {
-    if (holed) return;
+    if (hold) return;
     cssEditorContainer.style.width = '90%';
     htmlEditorContainer.style.width = '10%';
 }
@@ -114,35 +123,118 @@ monaco.languages.css.cssDefaults.setOptions({
     }
 });
 
-const status = document.createElement('div');
-status.id = 'status';
-status.style.textAlign = 'center';
-status.innerText = 'Connecting...';
 
-const iframe = document.createElement('iframe'); 
+const gridContainer = document.createElement('div');
+gridContainer.style.display = 'grid';
+gridContainer.style.gridTemplateColumns = '1fr 1fr';
+gridContainer.style.gridTemplateRows = '1fr 1fr';
+gridContainer.style.gap = '10px';
+gridContainer.style.width = '100%';
+gridContainer.style.height = '100vh';
+gridContainer.style.gridTemplateAreas = `
+    'html preview'
+    'css preview'
+`;  
 
-iframe.src = `http://localhost:3000${filePath}`;
+htmlEditorContainer.style.gridArea = 'html';
+cssEditorContainer.style.gridArea = 'css';
 
-iframe.style.width = '100%';
-iframe.style.minHeight = '100vh';
+const gridIframe = iframe.cloneNode();
+gridIframe.style.gridArea = 'preview';
+
+
+const holdButton = document.createElement('button');
+const scrollButton = document.createElement('button');
+const toVertical = document.createElement('button');
+toVertical.innerText = 'To Vertical';
 
 let toPreview = true;
 
-function scrollDown() {
-    if(toPreview) {
-        toPreview = false;
-        window.scrollTo(0,editorContainer.scrollHeight);
-        scrollButton.innerText = 'To Editor';
-    }else {
-        toPreview = true;
-        window.scrollTo(0,0);
-        scrollButton.innerText = 'To Preview';
-    }    
+scrollButton.innerText = 'To Preview';
+holdButton.innerText = 'LOCK';
+toolbox.appendChild(holdButton);
+toolbox.appendChild(scrollButton);
+toolbox.appendChild(toVertical);
+
+const reloadButton = document.createElement('button');
+reloadButton.innerText = 'Reload';
+
+const reload = () => {
+    iframe.src = iframe?.src ;
+    gridIframe.src = gridIframe?.src;
 }
-    
 
-editorContainer.insertAdjacentElement('afterend', status);
-status.insertAdjacentElement('afterend', iframe);
+reloadButton.onclick = () => {
+    reload();
+}
+
+toolbox.appendChild(reloadButton);
+
+let isVertical = false;
+
+toVertical.onclick = () => {
+ 
+    isVertical ? toVertical.innerText = 'To Vertical' : toVertical.innerText = 'To Horizontal'; 
+
+    if (!isVertical) {
+        hold = true;
+        document.body.removeChild(status);
+        document.body.removeChild(iframe);
+        document.body.removeChild(editorContainer);
+        
+        holdButton.disabled = true;
+        scrollButton.disabled = true;
+
+        document.body.appendChild(gridContainer);
+        gridContainer.appendChild(htmlEditorContainer);
+        gridContainer.appendChild(cssEditorContainer);
+        gridContainer.appendChild(gridIframe);
+        htmlEditorContainer.style.width = '100%';
 
 
-export {htmlEditor,cssEditor, status,iframe };
+        htmlEditorContainer.style.height = '50vh';
+        cssEditorContainer.style.width = '100%';
+        cssEditorContainer.style.height = '50vh';
+        
+     
+    }else{
+        document.body.removeChild(gridContainer);
+        
+        document.body.appendChild(editorContainer);
+        editorContainer.appendChild(htmlEditorContainer);
+        editorContainer.appendChild(cssEditorContainer);
+
+        document.body.appendChild(status);
+        document.body.appendChild(iframe);
+
+        holdButton.disabled = false;
+        scrollButton.disabled = false;
+
+        htmlEditorContainer.style.width = '50%';
+        htmlEditorContainer.style.height = '100%';
+        cssEditorContainer.style.width = '50%';
+        cssEditorContainer.style.height = '100%';
+        iframe.style.display = 'block';
+        editorContainer.style.display = 'flex';
+    }
+    isVertical = !isVertical;
+}
+
+
+scrollButton.onclick = () => {
+    scrollDown();
+}
+
+holdButton.onclick = () => {
+    hold = !hold;
+    holdButton.innerText = hold ? 'UNLOCK' : 'LOCK';
+    htmlEditorContainer.style.width = '50%';
+    cssEditorContainer.style.width = '50%';
+}
+
+document.body.appendChild(toolbox);
+
+editorContainer.appendChild(htmlEditorContainer);
+editorContainer.appendChild(cssEditorContainer);
+
+export {htmlEditor,cssEditor, status, reload };
