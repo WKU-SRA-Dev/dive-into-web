@@ -24,5 +24,6 @@ module.exports = {
             languages: ['html', 'javascript', 'css', 'json']
         })
     ],
-    mode: 'development',
+    mode: 'production',
+    devtool: 'source-map' 
 };

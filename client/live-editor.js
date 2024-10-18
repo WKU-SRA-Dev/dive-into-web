@@ -1,4 +1,6 @@
 import * as monaco from 'monaco-editor';
+import style from './live-editor.css';
+
 const filePath = document.location.pathname.replace('index.html','');
 
 if(window.location.hostname.includes('wkusci')) {
@@ -31,6 +33,7 @@ cssEditorContainer.style.width = '50%';
 cssEditorContainer.style.boxShadow = '0 0 10px rgba(0,0,0,0.5)';
 
 const toolbox = document.createElement('div');
+toolbox.classList.add('tool-box');
 toolbox.style.position = 'fixed';
 toolbox.style.top = '0';
 toolbox.style.right = '0';

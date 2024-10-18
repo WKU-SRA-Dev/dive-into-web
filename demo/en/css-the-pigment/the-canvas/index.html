@@ -1,12 +1,129 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <h1></h1>
+    <div data-collapasible="true" class="task-list-container"> 
+        <div id="collapse-control-bar">
+            <button id="collapse">🟡</button><button id="uncollapse">🟢</button>
+        </div>
+        <ul class="task-list">
+            <li>Understand the concept of Document flow</li>
+            <ul>
+                <li>plz watch <a href="https://www.youtube.com/watch?v=l8NH6YppJFA">Net Ninja's video</a> first</li>
+                <li>do <a href="#document-flow-lab">the lab</a> to test yourself</li>
+            </ul>
+          
+            <li>Understand the concept of Box Model</li>
+            <ul>
+                <li>plz watch <a href="https://www.youtube.com/watch?v=3-hpDA7Ioi4">Coloecode's video</a> first</li>
+                <li>do <a href="#box-model-lab">the lab</a> to test yourself</li>
+            </ul>
+        </ul>
+    </div>
+
+    <div id="document-flow-lab" class="task-container">
+        <p class="heading">lab 0 | Document Flow</p>
+        <div  class="description">
+            Hey, this lab aims to test your understaning to the document flow 🌊
+            <br>First and foremost, document flow is the order in which elements are displayed on the page.
+            It helps you to sturcture your page and make it more readable and understandable. If there is 
+            no document flow, the page will be a mess. 
+            <br> Here is an example of a page with no document flow, we make them to be absolute, if an element's position 
+            is absolute, it is out of the normal document flow, and can you track where are the three bros who are out of control 
+            <mark>Task 0: place the three element to document flow again, hint: delete the position absolute in the styles </mark>
+            <br>
+            <div style="color:red; position: absolute; top: 200px">I am out of the normal flow</div>
+            <div style="opacity: 60%; color:red; position: absolute; top: 120px;left: 20px;">the same, bro... </div>
+            <div style="color:red; position: absolute; top: 20px; right: 20px;">hun, ugly</div>
+            <p>Thanks god, if all the three bros are above me one by one, then you did a good job</p>
+            <p>
+                Now, your turn<mark>Task 1: Know what is block, inline, inline block, </mark>
+            </p>
+        </div>
+          <div style="background-color: blue; color: white;">
+            If you do not know which element am I, can you guess, am I a block, inline, or inline-block element?
+          </div>
+          <br>
+          <em style="background-color: red; color: white;">
+            If you do not know which element am I, can you guess, am I a block, inline, or inline-block element?
+          </em><em style="background-color: rgb(57, 208, 145); color: white;"> Hi, I am the same element with the red guy</em>
+
+          <span style="height:100px; width: 200px; background-color: goldenrod; display: inline-block;">
+            Hey, I just want to give you the answer, I am an inline element, the blue guy is block, red with green guys are inline elements
+          </span><span>What a pitty, the bro on my 👈 side is not pure inline, although it is <code>&lt;em&gt;</code>, an inline elemet, it was set to inline-block  </span>
+          <p>As you can see, block-level elements take up the full width of the line, while inline elements only take up the space they need. </p>
+          <p style="text-wrap: nowrap;overflow: hidden;">i am block<br>-----------🐈------------------🐈-------------🐈------------🐈-----------------------------------------------------------<br>-----------🐈------------------🐈-------------🐈-------------------------------------------------🐈----------------------</p>
+          <p style="text-wrap: nowrap;overflow: hidden;">i am inline<br>🦮🦮🦮🐕‍🦺🐕‍🦺🐕‍🦺</p>
+          <p style="text-wrap: nowrap;overflow: hidden;">i am inline-block<br>--🐈--------🐈----------🐈------ 🦴--------🦴----------🦴----<br>--🐈--------🐈----------🐈----- 🦴--------🦴----------🦴-----</p>
+          <mark>inline-block ---&gt; xxx---yyy, x means whether to take up the full space, yy means whether allowed to set the height and width</mark>
+    </div>
+
+    <div id="box-model-lab" class="task-container flex-col">
+        <div class="heading">lab 1 | Box Model</div>
+        <div class="description">
+            <mark>Task 0: By look at the styles in the div tags we provide to you, to label the padding, margin, border, you can use inspector in your browser </mark>
+            <br>Blue is content, red is padding, green is border, and the margin is the space between the border and the outside world
+            <br><br>
+            <mark>
+                Task 1: find the width in the inspector, what can you find? if you want to make your box 
+                200px width with 10 px padding, if you set the width to 200px, what will happen? how to solve it?
+            </mark>
+            <br><code>width = content + padding + border </code>You can solve it by <code>box-sizing: border-box; </code>then you can use the width to set the content width (200px),
+            At now, you do not need to care about mathamatics, I know you may think it is just addition, but primary math is also math 😡
+            <br><mark>
+                Task 3: Satisty the following requirements requsted by rupert, stewie, and brain
+            </mark>
+
+        </div>
+
+        <div style="margin: 0 auto; background-color: red; width: 100px; height:100px; padding: 15px; border: 10px solid green; margin: 20px;">
+            <div style="background-color: blue; color: white;"> I am content</div>
+        </div>
+
+        <div style="width: 100px;height: 200px; background-color: purple">
+            Hey, I am Rupert, can you leave some space for me? just like Stewie's
+        </div>
+
+        <div style="width: 100px; padding: 20px ;height: 200px; background-color: brown">
+            Hey, Stewie is here, I just want to stay with Rupert
+        </div>
+
+        <div style="width: 100px;height: 200px; background-color: pink">
+            I am Brain, please do not let me stay with Rupert, and I do not want to stay close to the edge, my 👈 side  
+        </div>
+
+       
+
+    </div>
+
+    <div class="task-container relative">
+        <div  class="heading">lab 2 | Position</div>
+        <div class="description"></div>
+    </div>
+    <script>
+        let collapasible = document.querySelector('[data-collapasible]');
+
+        let collapseControlBar = document.createElement('div');
+        collapseControlBar.id = 'collapse-control-bar';
+        let collapse = document.getElementById('collapse');
+        let uncollapse = document.getElementById('uncollapse');
+ 
+        collapse.addEventListener('click', () => {
+            collapasible.classList.add('collapsed');
+        });
+
+        uncollapse.addEventListener('click', () => {
+            collapasible.classList.remove('collapsed');
+        });
+
+    </script>
+</body>
+</html>
 </body>
 </html>

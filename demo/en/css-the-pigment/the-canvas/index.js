@@ -24,5 +24,5 @@ export const throttle = (cb, delay = 1000) => {
   
       setTimeout(timeoutFunc, delay);
     };
-  };
+};
   
